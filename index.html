@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyword Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Screen 1 -->
+  <div id="screen1">
+    <h1>JANコード登録</h1>
+    <input type="text" id="keywordInput" placeholder="登録するJANコードを入力してください。">
+    <button onclick="validateKeyword()">登録</button>
+    <p id="errorMessage" class="error" style="display: none;">JANコードが間違っています。確認の上再度入力してください。</p>
+  </div>
+
+  <!-- Screen 2 -->
+  <div id="screen2" style="display: none;">
+    <h1>アイテム登録完了！</h1>
+    <p>無事にJANコードが登録できました。</p>
+    <p>これでS君も無事に年を越せそうですね。</p>
+    <h1>今年も皆さまお疲れさまでした。来年もよろしくお願いいたします。</h1>
+  </div>
+
+  <script>
+    const correctKeyword = "12345";
+
+    function validateKeyword() {
+      const userInput = document.getElementById("keywordInput").value.trim();
+      const errorMessage = document.getElementById("errorMessage");
+      const screen1 = document.getElementById("screen1");
+      const screen2 = document.getElementById("screen2");
+
+      if (userInput === correctKeyword) {
+        screen1.style.display = "none";
+        screen2.style.display = "block";
+      } else {
+        errorMessage.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
