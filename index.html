@@ -18,23 +18,24 @@
 <body>
   <!-- Screen 1 -->
   <div id="screen1">
-    <h1>JANコード登録</h1>
-    <input type="text" id="keywordInput" placeholder="登録するJANコードを入力してください。">
-    <button onclick="validateKeyword()">登録</button>
-    <p id="errorMessage" class="error" style="display: none;">JANコードが間違っています。確認の上再度入力してください。</p>
+    <h1>納会謎解き専用フォーム</h1>
+    <p>パスワードは星を作ると現れます。</p>
+    <p>ただし、Q8の星は関係ありませんよ！</p>
+    <input type="text" id="keywordInput" placeholder="パスワードを入力してください。">
+    <button onclick="validateKeyword()">送信！</button>
+    <p id="errorMessage" class="error" style="display: none;">パスワードが間違っています。確認の上再度入力してください。</p>
   </div>
 
   <!-- Screen 2 -->
   <div id="screen2" style="display: none;">
-    <h1>アイテム登録完了！</h1>
-    <p>無事にJANコードが登録できました。</p>
-    <p>これでS君も無事に年を越せそうですね。</p>
+    <h1>正解！</h1>
+    <p>おめでとうございます！</p>
     <h1>今年も皆さまお疲れさまでした。</h1>
     <h1>来年もよろしくお願いいたします。</h1>
   </div>
 
   <script>
-    const correctKeyword = "12345";
+    const correctKeyword = "MART";
 
     function validateKeyword() {
       const userInput = document.getElementById("keywordInput").value.trim();
